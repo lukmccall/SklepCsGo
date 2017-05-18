@@ -108,7 +108,6 @@ class Users
                 $this->pdo->exec("DELETE FROM licence WHERE endTime < NOW()");
                 return true;
             }catch (PDOException $exception){
-                $this->log->addInfo("Wystąpił problem");
                 return false;
             }
         }
@@ -119,7 +118,6 @@ class Users
                 $query->execute();
                 return true;
             }catch (PDOException $exception) {
-                $this->log->addInfo("Wystąpił problem");
                 return false;
             }
         }

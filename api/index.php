@@ -28,13 +28,11 @@ $app->get('/', function (Request $request, Response $response) {
     echo ($this->users->validateUserLicence("admin", "admin"))?'Tak':"Nie";
 });
 
-$app->get('/delete', function (Request $request, Response $response) {
 
-    var_dump($this->users->deleteLicence(3));
+//Usuwanie licencji
+$app->get('/autoDelete', function (Request $request, Response $response) {
+    if($this->users->deleteLicence()) $this->logger->addInfo("Licencje Zostały Usunięte Poprawnie");
+    else $this->logger->addInfo("Wystąpił Błąd podczas Usuwania Licencji");
 });
 
-$app->get('/test', function (Request $request, Response $response) {
-    echo "hello World";
-    $this->logger->addInfo("Something interesting happened");
-});
 $app->run();
