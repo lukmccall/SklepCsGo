@@ -23,13 +23,32 @@ $app = new \Slim\App($config);
 require 'engine/container.php';
 
 
-$app->get('/', function (Request $request, Response $response) {
 
-    echo ($this->users->validateUserLicence("admin", "admin"))?'Tak':"Nie";
+//Grupa Adresów Przeznaczonych Jedynie Dla Ludzi Z Licencją
+$app->group('/licence', function (){
+    $this->post('/1', function (Request $request, Response $response){
+        echo "1";
+    });
+
+    $this->post('/2', function (Request $request, Response $response){
+        $date = $request->getParsedBody()['date'];
+        echo $date;
+    });
+})// Middleware - Sprawdzanie Czy Użytkownik Ma Licencję
+->add(function ($request, $response, $next){
+
+    $auth = $request->getParsedBody()['auth'];
+    $username = $auth['username'];
+    $password = $auth['password'];
+
+    if($this->users->validateUserLicence($username,$password)) $response = $next($request, $response);
+    else $response->getBody()->write("Odmowa Dostępu"); //todo zmienić to
+
+    return $response;
 });
 
 
-//Usuwanie licencji
+//Usuwanie Licencji
 $app->get('/autoDelete', function (Request $request, Response $response) {
     if($this->users->deleteLicence()) $this->logger->addInfo("Licencje Zostały Usunięte Poprawnie");
     else $this->logger->addInfo("Wystąpił Błąd podczas Usuwania Licencji");
