@@ -10,17 +10,22 @@
 /* Klasa Do Obsługi użytkowników */
 class Users
 {
+    private $pdo;
 
+    public function __construct($p)
+    {
+        $this->pdo = $p;
+    }
     /**
      * @param $c   <- obiekt app
      * @param $username
      * @param $password
      * @return bool
      */
-    public function validateUser($c , $username, $password){
+    public function validateUser( $username, $password){
         try{
-            $pdo = $c->db;
-            $query = $pdo-> prepare("SELECT count(*) as count FROM users WHERE username=:username AND password=:password");
+
+            $query = $this->pdo-> prepare("SELECT count(*) as count FROM users WHERE username=:username AND password=:password");
             $query->bindParam(":username", $username);
             $query->bindParam(":password", $password);
             $query->execute();
@@ -32,6 +37,5 @@ class Users
             $c->logger->addInfo("Wystąpił problem");
             return false;
         }
-
     }
 }

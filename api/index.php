@@ -51,9 +51,16 @@ $container['db'] = function ($c) {
     }
 };
 
+
+$container['users'] = function ($c){
+    $users = new Users($c->db);
+    return $users;
+};
+
+
 $app->get('/', function (Request $request, Response $response) {
-    $users = new Users();
-    $users->validateUser($this, "admin", "admin");
+
+    echo $this->users->validateUser("admin", "admin");
 
 });
 

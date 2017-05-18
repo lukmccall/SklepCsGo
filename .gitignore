@@ -1,3 +1,4 @@
 .idea/*
 *.xml
 api/log/app.log
+.idea/workspace.xml
