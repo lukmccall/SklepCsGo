@@ -20,7 +20,7 @@ $config = [
 
 $app = new \Slim\App($config);
 
-//Dodanie Containera W Osobnym Pliku
+//Dodanie Containera
 require 'engine/container.php';
 
 
@@ -92,7 +92,7 @@ $app->group('/licence', function (){
     $password = $auth['password'];
 
     if($this->users->validateUserLicence($username,$password)) $response = $next($request, $response);
-    else $response->getBody()->write("Odmowa Dostępu"); //todo zmienić to
+    else $response=$response->withJson(["status" => 0, "info" => "Odmowa dostępu"]);
 
     return $response;
 });
