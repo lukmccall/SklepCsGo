@@ -1,1 +1,1 @@
-Nie mieliśmy README, ale spoko, naprawiłem to już mamy, teraz jeszcze zrobić TODO i gotowe
+Nie mieliśmy README, ale spoko, naprawiłem to i już mamy, teraz jeszcze zrobić TODO i gotowe
