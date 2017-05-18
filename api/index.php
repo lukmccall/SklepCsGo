@@ -27,13 +27,14 @@ require 'engine/container.php';
 
 //Grupa Adresów Przeznaczonych Jedynie Dla Ludzi Z Licencją
 $app->group('/licence', function (){
-    $this->post('/addServer', function (Request $request, Response $response){
+
+    $this->put('/addServer', function (Request $request, Response $response){
         $database = $request->getParsedBody()['database'];
         $server = $request->getParsedBody()['server'];
 
         return $response->withJson($this->servers->addServer($database,$server));
 
-        /* Przykładowy POST W FORMACIE JSON
+        /* Przykładowy PUT W FORMACIE JSON
          {
             "auth" : {
                  "username" : "admin" ,
@@ -60,24 +61,29 @@ $app->group('/licence', function (){
          */
     });
 
-    $this->post('/1', function (Request $request, Response $response){
-        echo "1";
-    });
+    $this->delete('/deleteServer/{id}', function (Request $request, Response $response, $arg){
+        $database = $request->getParsedBody()['database'];
+        return $response->withJson($this->servers->deleteServer($database,$arg['id']));
 
-    $this->post('/2', function (Request $request, Response $response){
-        $date = $request->getParsedBody()['date'];
-        echo $date;
-
-        /* Przykładowy POST W FORMACIE JSON
+        /* Przykładowy DELETE W FORMACIE JSON
          {
             "auth" : {
                  "username" : "admin" ,
                  "password" : "admin"
             },
-            "date" : 1212323
-         }
+
+            "database" : {
+                 "host" : "nainformatyke.pl",
+                 "dbname" : "lukmccal_sklepuser",
+                 "username" : "lukmccal_sklep",
+                 "password" : "sklep"
+            }
+
+        }
          */
+
     });
+
 })// Middleware - Sprawdzanie Czy Użytkownik Ma Licencję
 ->add(function ($request, $response, $next){
 
