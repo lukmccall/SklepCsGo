@@ -5,8 +5,9 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
+require 'engine/Users.php';
 
-define('URL', '/sklep/api');
+define('URL', '/SklepCsGo/api');
 $_SERVER['REQUEST_URI'] = str_replace(URL, '', $_SERVER['REQUEST_URI']); // todo: TO trzeba zrobić inaczej ale to w wersji koncowej
 
 //Konfiguracja
@@ -50,11 +51,9 @@ $container['db'] = function ($c) {
     }
 };
 
-
 $app->get('/', function (Request $request, Response $response) {
-    echo "Hello World<pre>";
-    $p = $this->db;
-    var_dump($p->query("SELECT * FROM users")->fetch());
+    $users = new Users();
+    $users->validateUser($this, "admin", "admin");
 
 });
 
