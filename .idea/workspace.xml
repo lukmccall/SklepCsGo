@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3f4c0eb-83b7-468c-b22b-e527e9f70dda" name="Default" comment="Dziś więcej nie wydolę">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user/resource/scripts.js" />
+    <list default="true" id="c3f4c0eb-83b7-468c-b22b-e527e9f70dda" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/adminpanel/index.php" afterPath="$PROJECT_DIR$/user/adminpanel/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/adminpanel/logged.php" afterPath="$PROJECT_DIR$/user/adminpanel/logged.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,8 +62,8 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/user/adminpanel/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="31" column="113" lean-forward="false" selection-start-line="31" selection-start-column="113" selection-end-line="31" selection-end-column="113" />
+                <state relative-caret-position="602">
+                  <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
                   <folding>
                     <marker date="1495223495214" expanded="true" signature="534:662" ph="..." />
                   </folding>
@@ -76,8 +74,8 @@
           <file leaf-file-name="logged.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/user/adminpanel/logged.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="612">
-                  <caret line="36" column="54" lean-forward="false" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+                <state relative-caret-position="629">
+                  <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
                   <folding>
                     <element signature="e#378#446#0#PHP" expanded="true" />
                   </folding>
@@ -521,7 +519,7 @@
       <workItem from="1495136044048" duration="3538000" />
       <workItem from="1495186970587" duration="6850000" />
       <workItem from="1495208663260" duration="11567000" />
-      <workItem from="1495222535054" duration="3602000" />
+      <workItem from="1495222535054" duration="5009000" />
     </task>
     <task id="LOCAL-00001" summary="Dodane scss">
       <created>1495139230497</created>
@@ -607,11 +605,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495220870105</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="A jednak">
+      <created>1495226311853</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1495226311853</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35635000" />
+    <option name="totallyTimeSpent" value="37042000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -687,7 +692,8 @@
     <MESSAGE value="Navbar działa i jest w miarę ładny, dodane logowanie" />
     <MESSAGE value="Kurwa, najlepsze dziś." />
     <MESSAGE value="Dziś więcej nie wydolę" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dziś więcej nie wydolę" />
+    <MESSAGE value="A jednak" />
+    <option name="LAST_COMMIT_MESSAGE" value="A jednak" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1010,8 +1016,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user/adminpanel/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="31" column="113" lean-forward="false" selection-start-line="31" selection-start-column="113" selection-end-line="31" selection-end-column="113" />
+        <state relative-caret-position="602">
+          <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
           <folding>
             <marker date="1495223495214" expanded="true" signature="534:662" ph="..." />
           </folding>
@@ -1020,8 +1026,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user/adminpanel/logged.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="54" lean-forward="false" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+        <state relative-caret-position="629">
+          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
           <folding>
             <element signature="e#378#446#0#PHP" expanded="true" />
           </folding>
