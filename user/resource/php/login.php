@@ -6,7 +6,7 @@
  * Time: 12:34 PM
  */
 
-require('connect.php');
+//require('connect.php');
 if (isset($_POST['username']) and isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = md5($_POST['password']);
