@@ -7,6 +7,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 require 'vendor/autoload.php';
 require 'engine/Users.php';
 require 'engine/Servers.php';
+require 'engine/Services.php';
 
 define('URL', '/SklepCsGo/api');
 $_SERVER['REQUEST_URI'] = str_replace(URL, '', $_SERVER['REQUEST_URI']); // todo: TO trzeba zrobić inaczej ale to w wersji koncowej
@@ -26,6 +27,7 @@ require 'engine/container.php';
 //Grupa Adresów Przeznaczonych Jedynie Dla Ludzi Z Licencją
 $app->group('/licence', function (){
 
+    /*SERVERS*/
     $this->put('/addServer', function (Request $request, Response $response){
         $database = $request->getParsedBody()['database'];
         $server = $request->getParsedBody()['server'];
@@ -111,6 +113,16 @@ $app->group('/licence', function (){
          */
 
     });
+
+    /*SERVICES*/
+    $this->put('/addService/{id}', function (Request $request, Response $response, $arg){
+        $database = $request->getParsedBody()['database'];
+        $service = $request->getParsedBody()['service'];
+
+        if($this->servers->isExist($database,$arg['id'])) return $response->withJson($this->services->addService($database,$service,$arg['id']));
+        return $response->withJson(["status" => 0, "info" => "Taki serwer nie instnieje"]);
+    });
+
 
 })// Middleware - Sprawdzanie Czy Użytkownik Ma Licencję
 ->add(function ($request, $response, $next){

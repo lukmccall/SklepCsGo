@@ -46,6 +46,12 @@ $container['users'] = function ($c){
 
 // Dodawanie Klasy Servers <$this->servers;>
 $container['servers'] = function ($c){
-    $servers = new Servers($c->db, $c->logger);
+    $servers = new Servers($c->logger);
     return $servers;
+};
+
+// Dodawanie Klasy Services <$this->services;>
+$container['services'] = function ($c){
+    $services = new Services($c->logger);
+    return $services;
 };
