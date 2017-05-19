@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3f4c0eb-83b7-468c-b22b-e527e9f70dda" name="Default" comment="">
+    <list default="true" id="c3f4c0eb-83b7-468c-b22b-e527e9f70dda" name="Default" comment="Dziś więcej nie wydolę">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/adminpanel/index.php" afterPath="$PROJECT_DIR$/user/adminpanel/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/adminpanel/php/login.php" afterPath="$PROJECT_DIR$/user/adminpanel/php/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/resource/style.css" afterPath="$PROJECT_DIR$/user/resource/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/resource/style.css.map" afterPath="$PROJECT_DIR$/user/resource/style.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/resource/style.scss" afterPath="$PROJECT_DIR$/user/resource/style.scss" />
@@ -66,13 +65,13 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/user/adminpanel/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="398">
-                  <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+                <state relative-caret-position="347">
+                  <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
                   <folding>
-                    <marker date="1495220630690" expanded="true" signature="533:672" ph="..." />
-                    <marker date="1495220630690" expanded="true" signature="534:662" ph="..." />
-                    <marker date="1495220630690" expanded="true" signature="579:661" ph="..." />
-                    <marker date="1495220630690" expanded="true" signature="769:797" ph="..." />
+                    <marker date="1495220789073" expanded="true" signature="533:672" ph="..." />
+                    <marker date="1495220789073" expanded="true" signature="534:662" ph="..." />
+                    <marker date="1495220789073" expanded="true" signature="579:661" ph="..." />
+                    <marker date="1495220789073" expanded="true" signature="778:806" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -118,8 +117,8 @@
           <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/user/resource/style.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+                <state relative-caret-position="119">
+                  <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
@@ -194,8 +193,8 @@
         <option value="$PROJECT_DIR$/user/adminpanel/logged.php" />
         <option value="$PROJECT_DIR$/../inf_proj/session.php" />
         <option value="$PROJECT_DIR$/user/adminpanel/php/login.php" />
-        <option value="$PROJECT_DIR$/user/resource/style.scss" />
         <option value="$PROJECT_DIR$/user/adminpanel/index.php" />
+        <option value="$PROJECT_DIR$/user/resource/style.scss" />
       </list>
     </option>
   </component>
@@ -495,7 +494,7 @@
       <workItem from="1495105199266" duration="39000" />
       <workItem from="1495136044048" duration="3538000" />
       <workItem from="1495186970587" duration="6850000" />
-      <workItem from="1495208663260" duration="11357000" />
+      <workItem from="1495208663260" duration="11555000" />
     </task>
     <task id="LOCAL-00001" summary="Dodane scss">
       <created>1495139230497</created>
@@ -567,11 +566,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495211506334</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Dziś więcej nie wydolę">
+      <created>1495220698281</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1495220698281</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31823000" />
+    <option name="totallyTimeSpent" value="32021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -646,7 +652,8 @@
     <MESSAGE value="Navbar jeszce do poprawek, ale nie mam czasu" />
     <MESSAGE value="Navbar działa i jest w miarę ładny, dodane logowanie" />
     <MESSAGE value="Kurwa, najlepsze dziś." />
-    <option name="LAST_COMMIT_MESSAGE" value="Kurwa, najlepsze dziś." />
+    <MESSAGE value="Dziś więcej nie wydolę" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dziś więcej nie wydolę" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -658,10 +665,10 @@
         <state relative-caret-position="170">
           <caret line="10" column="68" lean-forward="false" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
           <folding>
-            <marker date="1495220630690" expanded="true" signature="533:672" ph="..." />
-            <marker date="1495220630690" expanded="true" signature="534:662" ph="..." />
-            <marker date="1495220630690" expanded="true" signature="579:661" ph="..." />
-            <marker date="1495220630690" expanded="true" signature="769:797" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="533:672" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="534:662" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="579:661" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="778:806" ph="..." />
           </folding>
         </state>
       </provider>
@@ -829,10 +836,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1495220630690" expanded="true" signature="533:672" ph="..." />
-            <marker date="1495220630690" expanded="true" signature="534:662" ph="..." />
-            <marker date="1495220630690" expanded="true" signature="579:661" ph="..." />
-            <marker date="1495220630690" expanded="true" signature="769:797" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="533:672" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="534:662" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="579:661" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="778:806" ph="..." />
           </folding>
         </state>
       </provider>
@@ -958,24 +965,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user/resource/style.scss">
+    <entry file="file://$PROJECT_DIR$/user/adminpanel/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="347">
+          <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+          <folding>
+            <marker date="1495220789073" expanded="true" signature="533:672" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="534:662" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="579:661" ph="..." />
+            <marker date="1495220789073" expanded="true" signature="778:806" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user/adminpanel/index.php">
+    <entry file="file://$PROJECT_DIR$/user/resource/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding>
-            <marker date="1495220630690" expanded="true" signature="533:672" ph="..." />
-            <marker date="1495220630690" expanded="true" signature="534:662" ph="..." />
-            <marker date="1495220630690" expanded="true" signature="579:661" ph="..." />
-            <marker date="1495220630690" expanded="true" signature="769:797" ph="..." />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

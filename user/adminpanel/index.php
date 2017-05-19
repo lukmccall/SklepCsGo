@@ -24,7 +24,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
 
 <!-- potrzebna tabela: admins, pola: id, username, password -->
 
-<div class="container">
+<div class="container" id="bg1">
     <div class="row">
        <div class="col"></div>
         <div class="col-4">

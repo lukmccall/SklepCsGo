@@ -3,6 +3,9 @@
   scss of SklepCsGo
   ┬ę┼üukasz Kosmaty, Kamil Owczarz, ┼üukasz Tomana 2017
  */
+#bg1 {
+  background-image: url("img/adminLogin.jpg"); }
+
 #form-login {
   position: absolute;
   width: 100%;
