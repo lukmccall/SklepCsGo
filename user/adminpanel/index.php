@@ -29,7 +29,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
        <div class="col"></div>
         <div class="col-4">
             <form class="form-signin" method="post" id="form-login">
-                <h2 class="form-signin-heading">Login</h2>
+                <h2 class="form-signin-heading"><? echo("TODD")?></h2> <!-- TODO pobieranie nazwy serwera klienta -->
                 <label for="inputUsername" class="sr-only">Username</label>
                 <input type="username" id="inputUsername" class="form-control" placeholder="Username" required="" autofocus="">
                 <label for="inputPassword" class="sr-only">Password</label>
