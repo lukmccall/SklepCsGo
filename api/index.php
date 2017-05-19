@@ -122,6 +122,15 @@ $app->group('/licence', function (){
         if($this->servers->isExist($database,$arg['id'])) return $response->withJson($this->services->addService($database,$service,$arg['id']));
         return $response->withJson(["status" => 0, "info" => "Taki serwer nie instnieje"]);
     });
+    $this->patch('/updateService/{id}', function (Request $request, Response $response, $arg){
+        $database = $request->getParsedBody()['database'];
+        $service = $request->getParsedBody()['service'];
+        return $response->withJson($this->services->updateService($database,$service,$arg['id']));
+    });
+    $this->delete('/deleteService/{id}', function (Request $request, Response $response, $arg){
+        $database = $request->getParsedBody()['database'];
+        return $response->withJson($this->services->deleteService($database,$arg['id']));
+    });
 
 
 })// Middleware - Sprawdzanie Czy Użytkownik Ma Licencję
