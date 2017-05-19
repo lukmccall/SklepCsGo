@@ -23,8 +23,6 @@ $app = new \Slim\App($config);
 //Dodanie Containera
 require 'engine/container.php';
 
-
-
 //Grupa Adresów Przeznaczonych Jedynie Dla Ludzi Z Licencją
 $app->group('/licence', function (){
 
@@ -60,7 +58,37 @@ $app->group('/licence', function (){
             }
          */
     });
+    $this->patch('/updateServer/{id}', function (Request $request, Response $response, $arg){
+        $database = $request->getParsedBody()['database'];
+        $server = $request->getParsedBody()['server'];
+        return $response->withJson($this->servers->updateServer($database,$server,$arg['id']));
 
+        /* Przykładowy PUT W FORMACIE JSON
+         {
+            "auth" : {
+                 "username" : "admin" ,
+                 "password" : "admin"
+            },
+
+            "database" : {
+                 "host" : "nainformatyke.pl",
+                 "dbname" : "lukmccal_sklepuser",
+                 "username" : "lukmccal_sklep",
+                 "password" : "sklep"
+            },
+
+            "server" :{
+                "ip" : "132.157.546.256",
+                "name" : "Nowy Serwer",
+                "shopType" : "1",
+                "shopHost" : "Host",
+                "shopDbName" : "Nazwa",
+                "shopUsername" : "Username",
+                "shopPassword" : "Haslo"
+            }
+            }
+         */
+    });
     $this->delete('/deleteServer/{id}', function (Request $request, Response $response, $arg){
         $database = $request->getParsedBody()['database'];
         return $response->withJson($this->servers->deleteServer($database,$arg['id']));
