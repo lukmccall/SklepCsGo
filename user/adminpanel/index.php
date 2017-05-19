@@ -8,29 +8,20 @@
     <script src="../resource/angular/angular.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-fixed-top" role="navigation" id="headerbar">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php">SklepCsGo</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-
-            </form>
-        </div><!--/.navbar-collapse -->
+<?php
+session_start();
+if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+    header("Location: logged.php");
+    exit();
+}
+?>
+<nav class="navbar navbar-inverse bg-inverse" role="navigation" id="headerbar">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.php">SklepCsGo</a>
     </div>
 </nav>
 
-<?php
-session_start();
-require('../resource/php/login.php');
-?>
+
 <!-- potrzebna tabela id, username, password -->
 
 <div id="container">
@@ -51,6 +42,10 @@ require('../resource/php/login.php');
                 <div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj się!</button>
         </form>
+        <?php
+        session_start();
+        require('../resource/php/login.php');
+        ?>
     </div>
 
 </body>
