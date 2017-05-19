@@ -29,12 +29,12 @@
 
 <?php
 session_start();
-require('php/login.php');
+require('../resource/php/login.php');
 ?>
 <!-- potrzebna tabela id, username, password -->
 
 <div id="container">
-    <?php if (isset($failmsg)) { ?>
+    <?php if (isset($fmsg)) { ?>
         <div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
     <div>
         <form class="form-signin" method="POST">
