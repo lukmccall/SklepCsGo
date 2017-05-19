@@ -14,37 +14,39 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
     exit();
 }
 ?>
-<nav class="navbar navbar-inverse bg-inverse" role="navigation" id="headerbar">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="index.php">SklepCsGo</a>
-    </div>
-</nav>
+<div>
+    <nav class="navbar navbar-inverse bg-inverse" role="navigation" id="headerbar">
+        <div class="navbar-header container">
+            <a class="navbar-brand" href="index.php">SklepCsGo</a>
+        </div>
+    </nav>
+</div>
 
+<!-- potrzebna tabela: admins, pola: id, username, password -->
 
-<!-- potrzebna tabela id, username, password -->
-
-<div id="container">
-    <?php if (isset($fmsg)) { ?>
-        <div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
-    <div>
-        <form class="form-signin" method="POST">
-            <h2 class="form-signin-heading">Login</h2>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="text" name="username" id="inputLogin" class="form-control" placeholder="Nazwa użytkownika" required
-                   autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Podaj hasło"
-                   required>
-            <?php if (isset($smsg)) { ?>
-                <div class="alert alert-success" role="alert"> <?php echo $smsg; ?> </div><?php } ?>
-            <?php if (isset($fmsg)) { ?>
-                <div class="alert alert-danger" role="alert"> <?php echo $fmsg; ?> </div><?php } ?>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Zarejestruj się!</button>
-        </form>
-        <?php
-        session_start();
-        require('../resource/php/login.php');
-        ?>
+<div class="container">
+    <div class="row">
+       <div class="col"></div>
+        <div class="col-4">
+            <form class="form-signin" method="post" id="form-login">
+                <h2 class="form-signin-heading">Login</h2>
+                <label for="inputUsername" class="sr-only">Username</label>
+                <input type="username" id="inputUsername" class="form-control" placeholder="Username" required="" autofocus="">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            </form>
+            <?php
+            session_start();
+            require('php/login.php');
+            ?>
+        </div>
+        <div class="col"></div>
     </div>
 
 </body>

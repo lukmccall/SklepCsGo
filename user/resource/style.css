@@ -3,5 +3,10 @@
   scss of SklepCsGo
   ┬ę┼üukasz Kosmaty, Kamil Owczarz, ┼üukasz Tomana 2017
  */
+#form-login {
+  position: absolute;
+  width: 100%;
+  max-width: 300px;
+  transform: translateY(100%); }
 
 /*# sourceMappingURL=style.css.map */
