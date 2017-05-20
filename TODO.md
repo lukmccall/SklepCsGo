@@ -1,7 +1,7 @@
 # TODO
 - [ ]  Layout
 - [ ]  Jak wprowadzić promocje?
-        Facebook? google adwords(dają 200ziko na start), do tego dobre pozycjonowanie i pyknie.
+        -Facebook? google adwords(dają 200ziko na start), do tego dobre pozycjonowanie i pyknie.
 - [ ]  Zaplecze 
 - [ ]  Skrypt instalacyjny 
 - [ ]  Wybrać firmy obsługujące płatności 
