@@ -1,10 +1,11 @@
 # TODO
 - [ ]  Layout
-- [ ]  Jak wprowadziæ promocje?
+- [ ]  Jak wprowadziÄ‡ promocje?
+        Facebook? google adwords(dajÄ… 200ziko na start), do tego dobre pozycjonowanie i pyknie.
 - [ ]  Zaplecze 
 - [ ]  Skrypt instalacyjny 
-- [ ]  Wybraæ firmy obs³uguj¹ce p³atnoœci 
+- [ ]  WybraÄ‡ firmy obsÅ‚ugujÄ…ce pÅ‚atnoÅ›ci 
 - [ ]  Plugin ingame 
-- [ ]  Ogarn¹æ angulara!!! XD 
+- [ ]  OgarnÄ…Ä‡ angulara!!! XD 
 - [ ]  System zakupu licencji 
 - [ ]  Jakikowiek front-end xD 
