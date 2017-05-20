@@ -5,8 +5,11 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
+require 'engine/Users.php';
+require 'engine/Servers.php';
+require 'engine/Services.php';
 
-define('URL', '/sklep/api');
+define('URL', '/SklepCsGo/api');
 $_SERVER['REQUEST_URI'] = str_replace(URL, '', $_SERVER['REQUEST_URI']); // todo: TO trzeba zrobić inaczej ale to w wersji koncowej
 
 //Konfiguracja
@@ -18,48 +21,136 @@ $config = [
 
 $app = new \Slim\App($config);
 
-$container = $app->getContainer();
+//Dodanie Containera
+require 'engine/container.php';
+
+//Grupa Adresów Przeznaczonych Jedynie Dla Ludzi Z Licencją
+$app->group('/licence', function (){
+
+    /*SERVERS*/
+    $this->put('/addServer', function (Request $request, Response $response){
+        $database = $request->getParsedBody()['database'];
+        $server = $request->getParsedBody()['server'];
+
+        return $response->withJson($this->servers->addServer($database,$server));
+
+        /* Przykładowy PUT W FORMACIE JSON
+         {
+            "auth" : {
+                 "username" : "admin" ,
+                 "password" : "admin"
+            },
+
+            "database" : {
+                 "host" : "nainformatyke.pl",
+                 "dbname" : "lukmccal_sklepuser",
+                 "username" : "lukmccal_sklep",
+                 "password" : "sklep"
+            },
+
+            "server" :{
+                "ip" : "132.157.546.256",
+                "name" : "Nowy Serwer",
+                "shopType" : "1",
+                "shopHost" : "Host",
+                "shopDbName" : "Nazwa",
+                "shopUsername" : "Username",
+                "shopPassword" : "Haslo"
+            }
+            }
+         */
+    });
+    $this->patch('/updateServer/{id}', function (Request $request, Response $response, $arg){
+        $database = $request->getParsedBody()['database'];
+        $server = $request->getParsedBody()['server'];
+        return $response->withJson($this->servers->updateServer($database,$server,$arg['id']));
+
+        /* Przykładowy PUT W FORMACIE JSON
+         {
+            "auth" : {
+                 "username" : "admin" ,
+                 "password" : "admin"
+            },
+
+            "database" : {
+                 "host" : "nainformatyke.pl",
+                 "dbname" : "lukmccal_sklepuser",
+                 "username" : "lukmccal_sklep",
+                 "password" : "sklep"
+            },
+
+            "server" :{
+                "ip" : "132.157.546.256",
+                "name" : "Nowy Serwer",
+                "shopType" : "1",
+                "shopHost" : "Host",
+                "shopDbName" : "Nazwa",
+                "shopUsername" : "Username",
+                "shopPassword" : "Haslo"
+            }
+            }
+         */
+    });
+    $this->delete('/deleteServer/{id}', function (Request $request, Response $response, $arg){
+        $database = $request->getParsedBody()['database'];
+        return $response->withJson($this->servers->deleteServer($database,$arg['id']));
+
+        /* Przykładowy DELETE W FORMACIE JSON
+         {
+            "auth" : {
+                 "username" : "admin" ,
+                 "password" : "admin"
+            },
+
+            "database" : {
+                 "host" : "nainformatyke.pl",
+                 "dbname" : "lukmccal_sklepuser",
+                 "username" : "lukmccal_sklep",
+                 "password" : "sklep"
+            }
+
+        }
+         */
+
+    });
+
+    /*SERVICES*/
+    $this->put('/addService/{id}', function (Request $request, Response $response, $arg){
+        $database = $request->getParsedBody()['database'];
+        $service = $request->getParsedBody()['service'];
+
+        if($this->servers->isExist($database,$arg['id'])) return $response->withJson($this->services->addService($database,$service,$arg['id']));
+        return $response->withJson(["status" => 0, "info" => "Taki serwer nie instnieje"]);
+    });
+    $this->patch('/updateService/{id}', function (Request $request, Response $response, $arg){
+        $database = $request->getParsedBody()['database'];
+        $service = $request->getParsedBody()['service'];
+        return $response->withJson($this->services->updateService($database,$service,$arg['id']));
+    });
+    $this->delete('/deleteService/{id}', function (Request $request, Response $response, $arg){
+        $database = $request->getParsedBody()['database'];
+        return $response->withJson($this->services->deleteService($database,$arg['id']));
+    });
 
 
-// Dodanie Logera <$this->logger->addInfo("Something interesting happened");>
-$container['logger'] = function($c) {
-    $logger = new \Monolog\Logger('Log');
-    $file_handler = new \Monolog\Handler\StreamHandler("./log/app.log");
-    $logger->pushHandler($file_handler);
-    return $logger;
-};
+})// Middleware - Sprawdzanie Czy Użytkownik Ma Licencję
+->add(function ($request, $response, $next){
 
-// Dodanie Bazy danych < $db = $this->db; >
-$container['db'] = function ($c) {
-    $db = [
-        'host' => 'nainformatyke.pl',
-        'dbname' => 'lukmccal_sklep',
-        'user' => 'lukmccal_sklep',
-        'pass' => 'sklep',
-    ];
-    try {
-        $pdo = new PDO("mysql:host=" . $db['host'] . ";dbname=" . $db['dbname'],
-            $db['user'], $db['pass']);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $auth = $request->getParsedBody()['auth'];
+    $username = $auth['username'];
+    $password = $auth['password'];
 
-        return $pdo;
-    }   catch (PDOException $Exception){
-        $c->logger->addInfo("Nie udało się połączyć z bazą danych");
-        return false;
-    }
-};
+    if($this->users->validateUserLicence($username,$password)) $response = $next($request, $response);
+    else $response=$response->withJson(["status" => 0, "info" => "Odmowa dostępu"]);
 
-
-$app->get('/', function (Request $request, Response $response) {
-    echo "Hello World<pre>";
-    $p = $this->db;
-    var_dump($p->query("SELECT * FROM users")->fetch());
-
+    return $response;
 });
 
-$app->get('/test', function (Request $request, Response $response) {
-    echo "hello World";
-    $this->logger->addInfo("Something interesting happened");
+
+//Usuwanie Licencji
+$app->get('/autoDelete', function (Request $request, Response $response) {
+    if($this->users->deleteLicence()) $this->logger->addInfo("Licencje Zostały Usunięte Poprawnie");
+    else $this->logger->addInfo("Wystąpił Błąd podczas Usuwania Licencji");
 });
+
 $app->run();

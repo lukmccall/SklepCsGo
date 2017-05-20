@@ -1,8 +1,0 @@
-#ignoruje te spierdolone pliki PhpStorm
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/watcherTasks.xml
-.idea/
-.idea/*
-#Jak to nie zadziała to dostanę wkurwa
-/.idea/
